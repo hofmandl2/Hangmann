@@ -1,0 +1,50 @@
+class Draw
+  {   
+    public Draw()
+      {
+        int tries  = 6;
+      }
+    
+    public string head()
+    {
+      return(
+          "  ___\n"+
+          " |   |\n"+
+          " |   |\n"+
+          " |___|"
+          );
+    }
+    public string necks_body()
+    {
+      return(
+          "   |\n"+
+          "   |\n"+
+          "   |\n"+
+          "   |\n"+
+          "   |\n"+
+          "   |\n"+
+          "   |\n"
+      );
+    }
+
+    public string arms()
+    {
+      return(
+          "    _____________\n"+
+          "   |             |\n"+
+          "   |             |\n"+
+          "  /|\\            |\n"+
+          " / | \\           |\n"+
+          "/  |  \\          |\n"+
+          "   |             |\n"+
+          "   |             |"
+            );
+    }
+    public string legs()
+    {
+      return(
+          "  / \\            |\n"+
+          " /   \\           |\n"+
+          "/     \\         _|_\n");
+    }
+    }

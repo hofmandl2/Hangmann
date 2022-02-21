@@ -1,0 +1,15 @@
+E:\C#\Hangmann\obj\Debug\net6.0\Hangmann.csproj.AssemblyReference.cache
+E:\C#\Hangmann\obj\Debug\net6.0\Hangmann.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\Hangmann\obj\Debug\net6.0\Hangmann.AssemblyInfoInputs.cache
+E:\C#\Hangmann\obj\Debug\net6.0\Hangmann.AssemblyInfo.cs
+E:\C#\Hangmann\obj\Debug\net6.0\Hangmann.csproj.CoreCompileInputs.cache
+E:\C#\Hangmann\bin\Debug\net6.0\Hangmann.exe
+E:\C#\Hangmann\bin\Debug\net6.0\Hangmann.deps.json
+E:\C#\Hangmann\bin\Debug\net6.0\Hangmann.runtimeconfig.json
+E:\C#\Hangmann\bin\Debug\net6.0\Hangmann.dll
+E:\C#\Hangmann\bin\Debug\net6.0\ref\Hangmann.dll
+E:\C#\Hangmann\bin\Debug\net6.0\Hangmann.pdb
+E:\C#\Hangmann\obj\Debug\net6.0\Hangmann.dll
+E:\C#\Hangmann\obj\Debug\net6.0\ref\Hangmann.dll
+E:\C#\Hangmann\obj\Debug\net6.0\Hangmann.pdb
+E:\C#\Hangmann\obj\Debug\net6.0\Hangmann.genruntimeconfig.cache
