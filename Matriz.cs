@@ -43,8 +43,14 @@ class Ahorcado
         Console.Write(i+" ");
       }
       Console.WriteLine(" ");*/
-      while (true)
+      while (complet != true)
       {
+        foreach (char i in lista_vacia)
+        {
+          
+          Console.Write(i+" ");
+
+        }
         Console.WriteLine("\nGeben Sie ein Buschatabe: "); //letra dada 
         caracter = char.Parse(Console.ReadLine());
         Console.WriteLine();
@@ -60,25 +66,27 @@ class Ahorcado
           }
           else{//tries++;
           }
-
         }
 
+        foreach(char a in lista_vacia) //Observa si la palabra ya se completo
+        {
+          if(a != '_')
+          {
+            complet =true;
+          }else{complet=false;
+          break;}
+        }
         if (find != true)
         {
           //draw
         }
         
         find = false;
-
-        foreach (char i in lista_vacia)
-        {
-          
-          Console.Write(i+" ");
-
-        }
-
       }
       Console.Write("\nFuera de while");
+      //Termino el Juego
+      
+      
       void getArray()
       {
         Console.WriteLine(String.Join("\n", palabras_array));
