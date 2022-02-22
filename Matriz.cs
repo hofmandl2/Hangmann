@@ -15,7 +15,8 @@ class Ahorcado
       string[] palabras_array = new string[]{}; //array que tendra las palabras
       string palabra; //entrada de la palabra
       char[] palabra_adivinar; //la palabra escogida en tipo char
-      
+      char caracter;
+      bool find = false;
       public Logic()
       {
         Console.WriteLine("Geben Sie bitte Worte ab, damit das Spiel anfagen kann");
@@ -36,6 +37,49 @@ class Ahorcado
         {
           lista_vacia[i] = '_';
         }
+        foreach(char i in palabra_adivinar)
+        {
+          Console.Write(i+" ");
+        }
+        Console.WriteLine(" ");
+        while (true)
+        {
+          Console.WriteLine("Geben Sie ein Buschatabe: ");
+          caracter = char.Parse(Console.ReadLine());
+          Console.WriteLine();
+
+          for(int i = 0 ; i< palabra_adivinar.Length; i++)
+          {
+            Console.WriteLine("For");
+            Console.Write("carcter: "+caracter);
+            Console.WriteLine();
+            if (caracter != palabra_adivinar[i])
+            {
+              find = false;
+              //tries++;
+            }
+            else{
+              Console.WriteLine("Richtig! ");
+              lista_vacia[i] = caracter;
+              find = true;
+              break;          
+            }
+            /*Bug, cuando el juego encuentra una palabra que tiene mas letras repetidas, siempre coje la primera, y no remeplaza a la segunda tambien no se peude salir cuando el juego
+            ya se termino*/
+          }
+          if (find == true)
+          {
+            foreach (char i in lista_vacia)
+            {
+              Console.Write(i+" ");
+            }
+          }
+          else
+          {
+            //Draw
+          }
+        }
+        
         foreach (char i in lista_vacia)
         {
           
