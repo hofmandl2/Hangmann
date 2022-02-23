@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Gabriel Rendon\\.nuget\\packages\\": {}
+    "/home/gabrielrendon/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\C#\\Hangmann\\Hangmann.csproj",
+      "projectUniqueName": "/home/gabrielrendon/Documents/C#/Hangmann/Hangmann.csproj",
       "projectName": "Hangmann",
-      "projectPath": "E:\\C#\\Hangmann\\Hangmann.csproj",
-      "packagesPath": "C:\\Users\\Gabriel Rendon\\.nuget\\packages\\",
-      "outputPath": "E:\\C#\\Hangmann\\obj\\",
+      "projectPath": "/home/gabrielrendon/Documents/C#/Hangmann/Hangmann.csproj",
+      "packagesPath": "/home/gabrielrendon/.nuget/packages/",
+      "outputPath": "/home/gabrielrendon/Documents/C#/Hangmann/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Gabriel Rendon\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/gabrielrendon/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
       }
     }
   }

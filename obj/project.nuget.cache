@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NQglZs0cB3ZWRvAGQHdwOJrOi38f7M7RJpO+leNnM6gv0eAJQlbgDCRURPkXoo9HeUFg5rP0xuD4/6u7wPv6mg==",
+  "dgSpecHash": "JmlQuZBLl3SH1ulh+4RT0ljIy8fBEP1C6KcAdXyEddnp8rV8RAEZECveQrtyPo9xRmufAb5h9iHPrY3JXGYYcg==",
   "success": true,
-  "projectFilePath": "E:\\C#\\Hangmann\\Hangmann.csproj",
+  "projectFilePath": "/home/gabrielrendon/Documents/C#/Hangmann/Hangmann.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
