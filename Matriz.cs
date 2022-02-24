@@ -83,11 +83,6 @@ class Ahorcado
       Console.Write("\nFuera de while");
       //Termino el Juego
       
-      
-      void getArray()
-      {
-        Console.WriteLine(String.Join("\n", palabras_array));
-      }
       int random_num_generation()
       {
         Random random = new Random();
@@ -99,6 +94,7 @@ class Ahorcado
   class Draw
   {   
     public int tries  = 0;
+    private string nochmal;
     Logic logic = new Logic();
     public void drawCase(int triesC)
     {
@@ -119,10 +115,9 @@ class Ahorcado
           Console.Write(head());
           Console.Write(arms());
           Console.Write(legs());
-          Console.WriteLine("Verloren \n");
-          Console.WriteLine("n1"+logic.complet);
-          logic.complet = false;
-          Console.WriteLine("2"+logic.complet);
+          Console.WriteLine("Verloren \n"+"\n Wollen Sie nochmal spielen?");
+          nochmal = Console.ReadLine();
+          logic.complet=false;
           break;
         default:
           Console.WriteLine("ops algo salio mal con el switch case");
