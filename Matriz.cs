@@ -7,23 +7,25 @@ class Ahorcado
   static void Main(string[] args)
   {
     //llamar a las otras clases
+    Console.ReadKey();
     Logic logic = new Logic();
+    logic.start();
+    
   }
   class Logic 
   {
     List<string> wort_input = new List<string>(); //lista para guardas las palabras
     string[] palabras_array = new string[]{}; //array que tendra las palabras
-    string palabra; //entrada de la palabra
+    string palabra = " "; //entrada de la palabra
     char[] palabra_adivinar; //la palabra escogida en tipo char
-    char caracter;
+    char caracter =  ' ';
     bool find = false; //si el caracter se encontro
-    public bool complet = false; //si la palabra ya esta completa
-    public Logic()
+    public bool complet; //si la palabra ya esta completa
+    Draw draw = new Draw(); //llamada a la clase que dibujara el cuerpo
+    public void start()
     {
-      Draw draw = new Draw(); //llamada a la clase que dibujara el cuerpo
-
       Console.WriteLine("Geben Sie bitte Worte ab, damit das Spiel anfagen kann");
-      while (true)
+      while (complet == false)
       {
         Console.Write("Wort: ");
         palabra = Console.ReadLine();
@@ -41,7 +43,7 @@ class Ahorcado
         lista_vacia[i] = '_';
       }
       
-      while (complet != true)
+      while (complet == false)
       {
         Console.WriteLine("\n");
         foreach (char i in lista_vacia)//lista que imprira al usario su progreso
@@ -69,8 +71,8 @@ class Ahorcado
         {
           if(a != '_')
           {
-            complet =true;
-          }else{complet=false;
+            setComplet(true);
+          }else{setComplet(false);
           break;}
         }
         if (find != true)
@@ -90,11 +92,23 @@ class Ahorcado
         return i;
       }
     }
+    public void restart()
+    {
+      //Borrar el array de palabras
+      for(int i = 0; i<palabras_array.Length; i++)
+      {
+        //Borrar todo el contenido
+      }
+    }
+    public void setComplet(bool complet)
+    {
+      this.complet = complet;
+    }
   }
   class Draw
   {   
     public int tries  = 0;
-    private string nochmal;
+    string nochmal;
     Logic logic = new Logic();
     public void drawCase(int triesC)
     {
@@ -117,13 +131,22 @@ class Ahorcado
           Console.Write(legs());
           Console.WriteLine("Verloren \n"+"\n Wollen Sie nochmal spielen?");
           nochmal = Console.ReadLine();
-          logic.complet=false;
+          if(nochmal == "y")
+          {
+            logic.setComplet(false);
+            tries = 0;
+            logic.restart();
+          }else{logic.setComplet(true);
+          tries = 0;
+          break;}
+
           break;
         default:
           Console.WriteLine("ops algo salio mal con el switch case");
           Console.Write(triesC);
           break;
       }
+      logic.complet = false;
     }
     public int getTries()
     {
@@ -174,5 +197,3 @@ class Ahorcado
     }
   }
 }
-  
-//Bug los tries no funcionan correctamente, se activan cuando se tiene una letra correcta pero una falsa no
