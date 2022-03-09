@@ -1,0 +1,16 @@
+E:\C#\Hangmann\Ejercicios\bin\Debug\net5.0\Ejercicios.exe
+E:\C#\Hangmann\Ejercicios\bin\Debug\net5.0\Ejercicios.deps.json
+E:\C#\Hangmann\Ejercicios\bin\Debug\net5.0\Ejercicios.runtimeconfig.json
+E:\C#\Hangmann\Ejercicios\bin\Debug\net5.0\Ejercicios.runtimeconfig.dev.json
+E:\C#\Hangmann\Ejercicios\bin\Debug\net5.0\Ejercicios.dll
+E:\C#\Hangmann\Ejercicios\bin\Debug\net5.0\ref\Ejercicios.dll
+E:\C#\Hangmann\Ejercicios\bin\Debug\net5.0\Ejercicios.pdb
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\Ejercicios.csproj.AssemblyReference.cache
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\Ejercicios.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\Ejercicios.AssemblyInfoInputs.cache
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\Ejercicios.AssemblyInfo.cs
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\Ejercicios.csproj.CoreCompileInputs.cache
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\Ejercicios.dll
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\ref\Ejercicios.dll
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\Ejercicios.pdb
+E:\C#\Hangmann\Ejercicios\obj\Debug\net5.0\Ejercicios.genruntimeconfig.cache
