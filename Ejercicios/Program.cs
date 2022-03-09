@@ -100,28 +100,17 @@ namespace Ejercicios
             imprimir_Tablero();
             Console.WriteLine("Que posicion quiere? ");
             posicion = Console.ReadLine();
-            if(int.Parse(posicion) < 10)
-            {
-                posicion = $" {posicion} |";
-            }
-            else {posicion = $"{posicion} |"; }
-            //
-            for(int i = 0; i<8; i++) 
-                { 
-                    for(int j = 0; j<8; j++)
-                    {
-                        if(tablero[i,j] == posicion)
-                        {
-                            posicion_caballo[0] = i; //posicion y
-                            posicion_caballo[1] = j; //posicion x
-                        }
-                    }
-                }
-            rellenar_Tablero("0");
-            tablero[posicion_caballo[0],posicion_caballo[1]] = "| A |";
-            calculoPosiciones(posicion_caballo[0],posicion_caballo[1]);
+            while(posicion != "q"){
 
-            imprimir_Tablero();
+                econtrarPosicion(posicion);
+                rellenar_Tablero(" ");
+                tablero[posicion_caballo[0],posicion_caballo[1]] = "| A |";
+                calculoPosiciones(posicion_caballo[0],posicion_caballo[1]);
+                imprimir_Tablero();
+                Console.Write("En que posicion quiere saltar? Elija un numero: \nSi desea salir oprima 'q'");
+                posicion = Console.ReadLine();
+
+            }
             //metodo de calculo para la siguiente posicion
 
             void calculoPosiciones(int pos_y,int pos_x)
@@ -182,10 +171,29 @@ namespace Ejercicios
                     pos2[0] = pos_y+1;
                     tablero[pos2[0],pos2[1]] = "| 8 |";
                 }
-
             }
             
             //Metodos
+            void econtrarPosicion(string posicion);
+            {
+                if(int.Parse(posicion) < 10)
+                {
+                    posicion = $" {posicion} |";
+                }
+                else {posicion = $"{posicion} |"; }
+                //
+                for(int i = 0; i<8; i++) 
+                { 
+                    for(int j = 0; j<8; j++)
+                    {
+                        if(tablero[i,j] == posicion)
+                        {
+                            posicion_caballo[0] = i; //posicion y
+                            posicion_caballo[1] = j; //posicion x
+                        }
+                    }
+                }
+            }
             void imprimir_Tablero()
             {
                 for(int i = 0; i<8; i++) //impresion

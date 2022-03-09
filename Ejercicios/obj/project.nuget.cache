@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OocYHuZefNj+n8ImWHe2WCxHwPMRncou9Q0ipzBJYixkxkFHG0+fMYS1W8Na+M10v2dfRYfozKUG28WFN7g9bw==",
+  "dgSpecHash": "RxOspMVZU1aO9bW7o5KseGb+bHveL+zuJo7Zt7eVJxjP27t3cvvhUquLJJr3WjlGEebf6SOewz5LVdlJwbNK3g==",
   "success": true,
-  "projectFilePath": "E:\\C#\\Hangmann\\Ejercicios\\Ejercicios.csproj",
+  "projectFilePath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/Ejercicios.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Gabriel Rendon\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+    "/home/gabrielrendon/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/home/gabrielrendon/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/home/gabrielrendon/.nuget/packages/microsoft.netcore.app.host.linux-arm64/5.0.15/microsoft.netcore.app.host.linux-arm64.5.0.15.nupkg.sha512"
   ],
   "logs": []
 }
