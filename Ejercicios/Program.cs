@@ -102,12 +102,18 @@ namespace Ejercicios
             posicion = Console.ReadLine();
             while(posicion != "q"){
 
+                if(int.Parse(posicion) < 10)
+                {
+                    posicion = $"| {posicion} |";
+                    econtrarPosicion(posicion);
+                }
+                else {posicion = $"{posicion} |"; }
                 econtrarPosicion(posicion);
-                rellenar_Tablero(" ");
+                rellenar_Tablero("-");
                 tablero[posicion_caballo[0],posicion_caballo[1]] = "| A |";
                 calculoPosiciones(posicion_caballo[0],posicion_caballo[1]);
                 imprimir_Tablero();
-                Console.Write("En que posicion quiere saltar? Elija un numero: \nSi desea salir oprima 'q'");
+                Console.Write("En que posicion quiere saltar? Elija un numero\nSi desea salir oprima 'q': ");
                 posicion = Console.ReadLine();
 
             }
@@ -174,20 +180,15 @@ namespace Ejercicios
             }
             
             //Metodos
-            void econtrarPosicion(string posicion);
+            void econtrarPosicion(string pos)
             {
-                if(int.Parse(posicion) < 10)
-                {
-                    posicion = $" {posicion} |";
-                }
-                else {posicion = $"{posicion} |"; }
-                //
                 for(int i = 0; i<8; i++) 
                 { 
                     for(int j = 0; j<8; j++)
                     {
-                        if(tablero[i,j] == posicion)
+                        if(tablero[i,j] == pos)
                         {
+                            Console.WriteLine(i+ " : "+j);
                             posicion_caballo[0] = i; //posicion y
                             posicion_caballo[1] = j; //posicion x
                         }
