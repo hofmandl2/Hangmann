@@ -83,15 +83,8 @@ namespace Ejercicios
 
             string[,] tablero = new string[8,8];
             int[] posicion_caballo = new int[2];
-            //posibles pos
-            int[] pos1 = new int[2];
-            int[] pos2 = new int[2];
-            int[] pos3 = new int[2];
-            int[] pos4 = new int[2];
-            int[] pos5 = new int[2];
-            int[] pos6 = new int[2];
-            int[] pos7 = new int[2];
-            int[] pos8 = new int[2];
+            /*En las matrizes de Programacion, para una cordenada no se hace como en mate que es (x,y)
+            si no (y,x) por eso, para impimir se le pone primero el calculo de (Y) y luego el de (x)*/
 
             string posicion;
             int index_de_relleno = 1;//para rellenar la matriz
@@ -102,85 +95,72 @@ namespace Ejercicios
             posicion = Console.ReadLine();
             while(posicion != "q"){
 
-                if(int.Parse(posicion) < 10)
+                if(int.Parse(posicion) < 10) //Por su forma de impresion, para que busque bien
                 {
                     posicion = $"| {posicion} |";
                     econtrarPosicion(posicion);
                 }
                 else {posicion = $"{posicion} |"; }
+
                 econtrarPosicion(posicion);
                 rellenar_Tablero("-");
-                tablero[posicion_caballo[0],posicion_caballo[1]] = "| A |";
-                calculoPosiciones(posicion_caballo[0],posicion_caballo[1]);
+
+                tablero[posicion_caballo[1],posicion_caballo[0]] = "| A |";
+                calculoPosiciones(posicion_caballo[0],posicion_caballo[1]); //pos j pos i
+                
                 imprimir_Tablero();
                 Console.Write("En que posicion quiere saltar? Elija un numero\nSi desea salir oprima 'q': ");
                 posicion = Console.ReadLine();
 
             }
-            //metodo de calculo para la siguiente posicion
 
-            void calculoPosiciones(int pos_y,int pos_x)
+            //metodo de calculo para la siguiente posicion
+            void calculoPosiciones(int pos_x,int pos_y)
             {
                 //pos1
-                if(pos_x-2 >= 0 && pos_y-1 >= 0 )
+                if(pos_y-1 >= 0 && pos_y-1 <=7 && pos_x -2 >=0 && pos_x -2 <=7 )
                 { 
-                    pos1[1] = pos_x-2;
-                    pos1[0] = pos_y-1;
-                    tablero[pos1[0],pos1[1]] = "| 1 |";
+                    tablero[pos_y-1,pos_x-2] = "| 1 |";
                 }
                 //pos2
                 if(pos_x-1 >= 0 && pos_x-1 <= 7 && pos_y-2 >= 0 && pos_y-2 <= 7)
                 {
-                    pos2[1] = pos_x-1;
-                    pos2[0] = pos_y-2;
-                    tablero[pos2[0],pos2[1]] = "| 2 |";
+                    tablero[pos_y-2,pos_x-1] = "| 2 |";
                 }
                 //pos3
-                if(pos_x+1 >= 0 && pos_x+1 <= 7  && pos_y+2 >= 0 && pos_y+2 <= 7)
+                if(pos_x+1 >= 0 && pos_x+1 <= 7  && pos_y-2 >= 0 && pos_y-2 <= 7)
                 {
-                    pos3[1] = pos_x+1;
-                    pos3[0] = pos_y-2;
-                    tablero[pos3[0],pos3[1]] = "| 3 |";
+                    tablero[pos_y-2,pos_x+1] = "| 3 |";
                 }
                 //pos4
-                if(pos_x+2>= 0 && pos_x+2 <= 7 && pos_y+1 >= 0 && pos_y+1 <= 7)
+                if(pos_x+2>= 0 && pos_x+2 <= 7 && pos_y-1 >= 0 && pos_y-1 <= 7)
                 {
-                    pos4[1] = pos_x+2;
-                    pos4[0] = pos_y-1;
-                    tablero[pos4[0],pos4[1]] = "| 4 |";
+                    tablero[pos_y-1,pos_x+2] = "| 4 |";
                 }
                 //pos5
                 if(pos_x+2 >= 0 && pos_x+2 <= 7 && pos_y+1 >= 0 && pos_y+1 <= 7)
                 {
-                    pos5[1] = pos_x+2;
-                    pos5[0] = pos_y+1;
-                    tablero[pos5[0],pos5[1]] = "| 5 |";
+                    tablero[pos_y+1,pos_x+2] = "| 5 |";
                 }
                 //pos6
                 if(pos_x+1 >= 0 && pos_x+1 <= 7 && pos_y+2 >= 0 && pos_y+2 <= 7)
                 {
-                    pos2[1] = pos_x+1;
-                    pos2[0] = pos_y+2;
-                    tablero[pos2[0],pos2[1]] = "| 6 |";
+                    tablero[pos_y+2,pos_x+1] = "| 6 |";
                 }
                 //pos7
                 if(pos_x-1 >= 0 && pos_x-1 <= 7 && pos_y+2 >= 0 && pos_y+2 <= 7)
                 {
-                    pos2[1] = pos_x-1;
-                    pos2[0] = pos_y+2;
-                    tablero[pos2[0],pos2[1]] = "| 7 |";
+                    tablero[pos_y+2,pos_x-1] = "| 7 |";
                 }
                 //pos8
                 if(pos_x-2 >= 0 && pos_x-2 <= 7 && pos_y+1 >= 0 && pos_y+1 <= 7)
                 {
-                    pos2[1] = pos_x-2;
-                    pos2[0] = pos_y+1;
-                    tablero[pos2[0],pos2[1]] = "| 8 |";
+                    tablero[pos_y+1,pos_x-2] = "| 8 |";
                 }
             }
             
             //Metodos
-            void econtrarPosicion(string pos)
+            void econtrarPosicion(string pos) //Encuentra la pos del caballo en cada interacion de este
             {
                 for(int i = 0; i<8; i++) 
                 { 
@@ -189,12 +169,13 @@ namespace Ejercicios
                         if(tablero[i,j] == pos)
                         {
                             Console.WriteLine(i+ " : "+j);
-                            posicion_caballo[0] = i; //posicion y
-                            posicion_caballo[1] = j; //posicion x
+                            posicion_caballo[0] = j; //posicion x
+                            posicion_caballo[1] = i; //posicion y
                         }
                     }
                 }
             }
+
             void imprimir_Tablero()
             {
                 for(int i = 0; i<8; i++) //impresion
@@ -224,7 +205,7 @@ namespace Ejercicios
                 Console.WriteLine();
             }
             
-            void rellenar_Tablero(string clave)
+            void rellenar_Tablero(string clave) //rellena el tablero con lo que yo quiera se llama en la linea 106
             {
                 for(int i = 0; i<8; i++) //relleno
                 { 
@@ -235,6 +216,6 @@ namespace Ejercicios
                     Console.WriteLine();
                 }
             }
-          }
+        }
     }
 }

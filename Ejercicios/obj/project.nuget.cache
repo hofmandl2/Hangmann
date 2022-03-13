@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o4+kk1ijwb4/39FCEigiXIr3Eqm1/yzavAFTMwn8zbsPQ1cwKQtzXmDp7BpXG5KXcP1oLaI6+eZlWbDMFkHgDg==",
+  "dgSpecHash": "kjdJ7bT+crtmLOTNLbNlucNdsrgh1oo4gfbnWElE/bMonMgDqkmS9DBl/mocZW5YU0TgwkK6ingQfkCS3mPjdg==",
   "success": true,
-  "projectFilePath": "E:\\C#\\Hangmann-Ejercicios\\Ejercicios\\Ejercicios.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Gabriel Rendon\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
-  ],
+  "projectFilePath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/Ejercicios.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
