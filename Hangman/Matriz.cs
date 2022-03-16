@@ -16,18 +16,21 @@ class Ahorcado
     Draw draw = new Draw();
 
     List<string> palabras_dadas = new List<string>();
-    string palabra_input;
+    string palabra_input; 
     char letra;
     char[] palabra_char;
     char[] palabra_vacia;
     bool complet = false; //Estar en falso si la palabra no ha sido completada
+    bool find = false;
+    bool lose = false; //Mira si el jugador perdio
+    int trie = 0;
     public void start()
     { 
-        Console.WriteLine("Palabras");
+        Console.WriteLine("\nPalabras");
         while(true)
         {
             Console.Write("Escriba: ");
-            palabra_input = Console.ReadLine();
+            palabra_input = Console.ReadLine().ToLower();
             if(palabra_input == "q")
             {
                 break;
@@ -50,8 +53,27 @@ class Ahorcado
             palabra_vacia[i] = '-';                
         }
         //Empieza el juego
-        while(draw.lose != true || complet !=  true)
+        while(lose != true && complet !=  true)
         {
+            Console.WriteLine("Escriba una letra: ");
+            try 
+            {
+                letra = Convert.ToChar(Console.ReadLine());
+            }catch
+            { 
+                Console.WriteLine("Tiene que escribir una Letra, no un numero ni una palabra");
+                Console.WriteLine("\nEscriba una letra: ");
+                letra = Convert.ToChar(Console.ReadLine());
+            }
+            for(int i = 0; i < palabra_char.Length; i++)
+            {
+                if(letra == palabra_char[i])
+                {
+                    palabra_vacia[i] = palabra_char[i];
+                    find = true;
+                }
+            }
+            impress_charvacio();//imprime el char vacio, progreso del jugador
             foreach(char c in palabra_vacia)
             {
                 if (c == '-')
@@ -64,43 +86,51 @@ class Ahorcado
                     complet = true;
                 }
             }
-            Console.WriteLine(complet);
-            Console.WriteLine("Escriba una letra: ");
-            try 
+            if(find != true)
             {
-                letra = Convert.ToChar(Console.ReadLine());
-            }catch
-            { 
-                Console.WriteLine("Tiene que escribir una Letra, no un numero ni una palabra");
-                Console.WriteLine("Escriba una letra: ");
-                letra = Convert.ToChar(Console.ReadLine());
-            }
-            for(int i = 0; i < palabra_char.Length; i++)
-            {
-                if(letra == palabra_char[i])
+                switch(trie)
                 {
-                    palabra_vacia[i] = palabra_char[i];
-                }                
+                    case 0:
+                        Console.WriteLine(draw.head());
+                        trie++;
+                        break;
+                    case 1:
+                        Console.WriteLine(draw.head());
+                        Console.WriteLine(draw.necks_body());
+                        trie++;
+                        break;
+                    case 2:
+                        Console.WriteLine(draw.head());
+                        Console.WriteLine(draw.arms());
+                        trie++;
+                        break;
+                    case 3:
+                        Console.WriteLine(draw.head());
+                        Console.WriteLine(draw.arms());
+                        Console.WriteLine(draw.legs());
+                        trie++;
+                        lose = true;
+                        Console.WriteLine("Perdiste!");
+                        break;
+                    default:
+                        break;
+                }
             }
-            foreach(char i in palabra_vacia)
-            {
-            Console.Write(i);
-            }
-            Console.WriteLine();
-            
+            find = false;            
         }
-
-
-        //impresion
-        foreach(char i in palabra_char)
+        if(complet == true)
         {
-            Console.Write(i);
+            Console.WriteLine("Felicidades Ganaste!");
         }
-        Console.WriteLine();    
+    }
+    
+    void impress_charvacio()
+    {
         foreach(char i in palabra_vacia)
         {
             Console.Write(i);
         }
+        Console.WriteLine(); 
     }
     private int random_numer()
     {
@@ -111,8 +141,7 @@ class Ahorcado
   }
   class Draw
   { 
-    public bool lose = false;
-    private string head()
+    public string head()
     {
             return(
           "  ___\n"+
@@ -121,7 +150,7 @@ class Ahorcado
           " |___|\n"
           );
     }
-    private string necks_body()
+    public string necks_body()
     {
       return(
 
@@ -134,7 +163,7 @@ class Ahorcado
       );
     }
 
-    private string arms()
+    public string arms()
     {
       return(
           "    _____________\n"+
@@ -147,7 +176,7 @@ class Ahorcado
           "   |             |\n"
             );
     }
-    private string legs()
+    public string legs()
     {
       return(
       
