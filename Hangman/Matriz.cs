@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
     
@@ -7,6 +7,7 @@ class Ahorcado
   static void Main(string[] args)
   {
     //llamar a las otras clases
+    Console.Clear();
     Logic logic = new Logic();
     logic.start();
     
@@ -37,7 +38,7 @@ class Ahorcado
             }else {palabras_dadas.Add(palabra_input); }
         }
         //Se guarda la palabra escogida en la variable string
-        palabra_input = palabras_dadas[random_numer()];
+        palabra_input = palabras_dadas[random_numer()];//el metodo random_numer esta casi al final y da un numero aleatorio para que elija entre todos las palabras con el index
         //se crea el largo de los arreglos
         palabra_char = new char[palabra_input.Length];
         palabra_vacia = new char[palabra_input.Length];
@@ -55,17 +56,19 @@ class Ahorcado
         //Empieza el juego
         while(lose != true && complet !=  true)
         {
+            
             Console.WriteLine("Escriba una letra: ");
-            try 
+            try //Try catch para que no se caiga por accidente si el usuario tipea mas de una letra 
             {
-                letra = Convert.ToChar(Console.ReadLine());
+                letra = Convert.ToChar(Console.ReadLine());    
             }catch
             { 
                 Console.WriteLine("Tiene que escribir una Letra, no un numero ni una palabra");
                 Console.WriteLine("\nEscriba una letra: ");
                 letra = Convert.ToChar(Console.ReadLine());
             }
-            for(int i = 0; i < palabra_char.Length; i++)
+            /*Recorre y mira si la letra esta, y la remplaza en la lista vacia*/
+            for(int i = 0; i < palabra_char.Length; i++) 
             {
                 if(letra == palabra_char[i])
                 {
@@ -73,7 +76,10 @@ class Ahorcado
                     find = true;
                 }
             }
+            
             impress_charvacio();//imprime el char vacio, progreso del jugador
+            
+            //Foreach que mira si la lista vacia ya fue rellenada, y si es asi terminar el juego
             foreach(char c in palabra_vacia)
             {
                 if (c == '-')
@@ -86,10 +92,13 @@ class Ahorcado
                     complet = true;
                 }
             }
+            //Aca se mirar automaticamente si el juegador ha perdido un Intento o el Juego
             if(find != true)
             {
+                
                 switch(trie)
                 {
+                    //la clase draw esta al final y es la que dibuja todas las partes del cuerpo
                     case 0:
                         Console.WriteLine(draw.head());
                         trie++;
@@ -115,24 +124,30 @@ class Ahorcado
                     default:
                         break;
                 }
+                
             }
-            find = false;            
+            find = false; //se coloca al final para que en la siguiente iteracion la variable no quede true
+            
         }
+        
         if(complet == true)
         {
             Console.WriteLine("Felicidades Ganaste!");
         }
+        
     }
     
-    void impress_charvacio()
+    void impress_charvacio()//imprime el array vacio
     {
+        
         foreach(char i in palabra_vacia)
         {
             Console.Write(i);
         }
         Console.WriteLine(); 
     }
-    private int random_numer()
+      
+    private int random_numer() //nos da un numero aletariorio con Count que es el largo de la lista
     {
         Random random = new Random();
         int i = random.Next(palabras_dadas.Count());

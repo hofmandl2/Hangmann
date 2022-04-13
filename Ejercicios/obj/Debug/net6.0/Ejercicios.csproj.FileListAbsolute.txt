@@ -1,0 +1,15 @@
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/bin/Debug/net6.0/Ejercicios
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/bin/Debug/net6.0/Ejercicios.deps.json
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/bin/Debug/net6.0/Ejercicios.runtimeconfig.json
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/bin/Debug/net6.0/Ejercicios.dll
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/bin/Debug/net6.0/Ejercicios.pdb
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.csproj.AssemblyReference.cache
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.AssemblyInfoInputs.cache
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.AssemblyInfo.cs
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.csproj.CoreCompileInputs.cache
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.dll
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/refint/Ejercicios.dll
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.pdb
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/Ejercicios.genruntimeconfig.cache
+/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/Debug/net6.0/ref/Ejercicios.dll

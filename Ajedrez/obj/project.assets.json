@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/Ejercicios.csproj",
-      "projectName": "Ejercicios",
-      "projectPath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/Ejercicios.csproj",
+      "projectUniqueName": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/Ajedrez.csproj",
+      "projectName": "Ajedrez",
+      "projectPath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/Ajedrez.csproj",
       "packagesPath": "/home/gabrielrendon/.nuget/packages/",
-      "outputPath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ejercicios/obj/",
+      "outputPath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/gabrielrendon/.nuget/NuGet/NuGet.Config"

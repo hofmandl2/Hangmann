@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Ejercicios
@@ -80,12 +80,12 @@ namespace Ejercicios
             /*Caso de prueba 3: Matrices 
             El movimiento del caballo en un tablero de ajedrez se da en forma de L, si tenemos un ajedrez de (8x8) casillas, diseñe un algoritmo que lea las coordenadas con la ubicación de un caballo en ese tablero, muestre como resultado una matriz con las celdas marcadas con el valor 1 para indicar las casillas a las que se puede mover el caballo. 
             El caballo puede moverse entre casillas: dos en una dirección y una en una dirección perpendicular. Considere los límites del tablero*/
-
+/*
             string[,] tablero = new string[8,8];
             int[] posicion_caballo = new int[2];
             /*En las matrizes de Programacion, para una cordenada no se hace como en mate que es (x,y)
             si no (y,x) por eso, para impimir se le pone primero el calculo de (Y) y luego el de (x)*/
-
+/*
             string posicion;
             int index_de_relleno = 1;//para rellenar la matriz
             //
@@ -164,7 +164,7 @@ namespace Ejercicios
             {
                 for(int i = 0; i<8; i++) 
                 { 
-                    for(int j = 0; j<8; j++)
+                     for(int j = 0; j<8; j++)
                     {
                         if(tablero[i,j] == pos)
                         {
@@ -205,7 +205,7 @@ namespace Ejercicios
                 Console.WriteLine();
             }
             
-            void rellenar_Tablero(string clave) //rellena el tablero con lo que yo quiera se llama en la linea 106
+            void rellenar_Tablero(string clave) //rellena el tablero con lo que yo quiera se llama en la             linea 106
             {
                 for(int i = 0; i<8; i++) //relleno
                 { 
@@ -216,6 +216,74 @@ namespace Ejercicios
                     Console.WriteLine();
                 }
             }
+            */
+            
+            /*Ivertir numeros de todas las cifras*/
+            
+            /*string numero_string = " ";
+            int numero_normal;
+            string numero_invertido;
+            int numero_final;
+            
+            Console.WriteLine("De un numero: ");
+            numero_string = Console.ReadLine();
+            numero_normal = int.Parse(numero_string);
+            
+            numero_invertido = Convert.ToString(numero_normal%10);
+            for(int i = 0; i<numero_string.Length; i++)
+            {
+                numero_normal = numero_normal/10;
+                if(numero_normal == 0){break;}
+                numero_invertido += Convert.ToString(numero_normal%10);
+            }
+            Console.Write(numero_invertido+"\n");*/
+            
+            /*Entrar dos numero y dar como resultado (a+b)*(a-b)*/
+            /*int numero1;
+            int numero2;
+            int multi;
+            
+            Console.Write("Escriba el numero 1: ");
+            numero1 = int.Parse(Console.ReadLine());
+            Console.Write("Escriba el numero 2: ");
+            numero2 = int.Parse(Console.ReadLine());
+            
+            multi = (numero1 + numero2) * (numero1 - numero2);
+            Console.Write(multi+"\n");
+            */
+            /*imc = peso/m2*/
+            /*
+            double peso;
+            double altura;
+            double imc;
+            
+            while(true)
+            {
+                Console.WriteLine("Peso: ");
+                peso = double.Parse(Console.ReadLine());
+                if (peso == 0){break;}
+                Console.WriteLine("Altura: ");
+                altura = double.Parse(Console.ReadLine());
+                altura = Math.Pow(altura,2);
+
+                
+                imc = peso/altura;
+                Console.WriteLine(imc);
+                
+            }
+            */
+             /*Tablero de ajedrez con todas su fillas funcionales*/
+            /*
+               1) Tablero con sus marcas negras "-" y blancas "+"
+               2) dibujar cada pieza y sus posibilidades
+               3) coliciones
+               4) ganadores*/
+
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.WriteLine("Background color changed = "+Console.BackgroundColor);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("hola");
         }
     }
 }
+
