@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using clasePiezas;
 using System.Threading.Tasks;
+
 namespace Ajedrez_main
 {
     class Ajedrez
     {
         
-        static void Main(string[] arg)
+       static void Main(string[] arg)
         {
             Logic logic = new Logic();
             logic.start();
@@ -26,22 +27,40 @@ namespace Ajedrez_main
                     for(int j = 0; j<8; j++)
                     {   
                         tablero[i,j] = "  ";
+                        if(i == 1 && j < 8)
+                        {
+                            tablero[i,j] = piezas.getPiezas("Peon");
+                        }
                     }
                 }
-                tablero[7,0] = piezas.getPiezas("Torre");
+
+                tablero[piezas.getCoordinat_piezas_negras("TorreIi"),piezas.getCoordinat_piezas_negras("TorreIj")] = piezas.getPiezas("Torre");
+                tablero[piezas.getCoordinat_piezas_negras("ArfilBi"),piezas.getCoordinat_piezas_negras("ArfilBj")] = piezas.getPiezas("Arfil");
+                tablero[piezas.getCoordinat_piezas_negras("Caballo1i"),piezas.getCoordinat_piezas_negras("Caballo1j")] = piezas.getPiezas("Caballo");
+                tablero[piezas.getCoordinat_piezas_negras("Reyi"),piezas.getCoordinat_piezas_negras("Reyj")] = piezas.getPiezas("Rey");
+                tablero[piezas.getCoordinat_piezas_negras("Reinai"),piezas.getCoordinat_piezas_negras("Reinaj")] = piezas.getPiezas("Reina");
+                tablero[piezas.getCoordinat_piezas_negras("Caballo2i"),piezas.getCoordinat_piezas_negras("Caballo2j")] = piezas.getPiezas("Caballo");
+                tablero[piezas.getCoordinat_piezas_negras("ArfilNi"),piezas.getCoordinat_piezas_negras("ArfilNj")] = piezas.getPiezas("Arfil");
+                tablero[piezas.getCoordinat_piezas_negras("TorreDi"),piezas.getCoordinat_piezas_negras("TorreDj")] = piezas.getPiezas("Torre");
+                
+
                 
             }
             public void start()
             {
+                
                 while(true)
                 {
                         boardImpress();
+                        Console.WriteLine(piezas.getCoordinat_piezas_negras("Reyi"));
+                        piezas.setCoordinat_piezas_negras("Reyi","Reyj",1,1);
+                        Console.WriteLine(piezas.getCoordinat_piezas_negras("Reyi"));
                         Thread.Sleep(2000);
                 }
             }
             private void boardImpress()
             {
-                                    Console.Clear();
+                    //Console.Clear();
                     for (int i = 0; i < 8; i++)
                     {
                         for (int j = 0; j < 8; j++)
@@ -52,6 +71,7 @@ namespace Ajedrez_main
                                 Console.ForegroundColor = ConsoleColor.Black;
                                 Console.Write(tablero[i,j]);
                                 Console.BackgroundColor = ConsoleColor.Black;
+                                Console.ForegroundColor = ConsoleColor.Black;
                             }
                             else{
 
@@ -67,6 +87,9 @@ namespace Ajedrez_main
                     }
             }
         }     
+        
+         
+         
 
     } 
 }
