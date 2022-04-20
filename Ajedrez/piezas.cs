@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace clasePiezas
@@ -19,4 +19,12 @@ namespace clasePiezas
 					return list_Piezas[nombre_pieza];	            	
 		}
 	}
+    public class Rey
+    {
+        /*public void move(pos_x, pos_y)
+        {
+            //move1
+             
+        }*/
+    }
 }
