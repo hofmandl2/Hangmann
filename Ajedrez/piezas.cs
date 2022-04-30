@@ -39,14 +39,10 @@ namespace clasePiezas
 				{"Peon8i",6},{"Peon8j",7}
         };
 
-		public void setCoordinatBlancasI(string cordI,int i)
+		public void setCoordinatBlancas(string cord,int value)
 		{
-		    coordinaten_blancas[cordI] = i; //i
+		    coordinaten_blancas[cord] = value; 
 		}
-  		public void setCoordinatBlancasJ(string cordJ,int j)
-		{
-		    coordinaten_blancas[cordJ] = j;
-        }
 		public int getCoordinat_piezas_blancas(string clave)
         {  
 			return coordinaten_blancas[clave];
@@ -142,10 +138,9 @@ namespace clasePiezas
 				{"Peon7i",1},{"Peon7j",6},
 				{"Peon8i",1},{"Peon8j",7}
         };
-		public void setCoordinat_piezas_negras(string cordx,string cordy, int x,int y)
+		public void setCoordinatNegras(string cord,int value)
         {
-           coordinaten_negras[cordx] = x;
-		   coordinaten_negras[cordy] = y;
+           coordinaten_negras[cord] = value;
         }
 		public int getCoordinat_piezas_negras(string clave)
         {

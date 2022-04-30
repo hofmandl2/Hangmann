@@ -21,29 +21,23 @@ namespace Ajedrez_main
         
            
             string[,] tablero = new string[8, 8];
-            /*public void init()
-            {
-                rellenoTableroFichasInit();//relleno inicial con las localizaciones originales                               
-            }*/
             public void start()
             {
                 int x = 0;
-                int y = 0 ;
+                int y = 0;
                 while(true)
                 {
                         
-                        rellenoTableroFichasInit();//relleno que se actuliza con cada frame
-                        boardImpress();
-
-                        Console.WriteLine($"i: {piezas.getCoordinat_piezas_blancas("Caballo1i")} j:{piezas.getCoordinat_piezas_blancas("Caballo1j")}");
-                    //piezas.setCoordinat_piezas_negras("Cababllo1i","Caballo1j",0,0); //i,j
-                        piezas.setCoordinatBlancasI("Caballo2i",7);
-                        
-                        Console.WriteLine("Type x: ");
-                        x = int.Parse(Console.WriteLine());
-                        piezas.setCoordinatBlancasJ("Caballo2j",x);
-                    Console.WriteLine($"i: {piezas.getCoordinat_piezas_blancas("Caballo1i")} j:{piezas.getCoordinat_piezas_blancas("Caballo1j")}");
-                    Thread.Sleep(2000);
+                    rellenoTableroFichasInit();//relleno que se actuliza con cada frame
+                    boardImpress();
+                    
+                    Console.WriteLine("Type x: ");
+                    x = int.Parse(Console.ReadLine());
+                    piezas.setCoordinatNegras("Caballo2j",x);
+                    Console.WriteLine("Type y: ");
+                    y = int.Parse(Console.ReadLine());
+                    piezas.setCoordinatNegras("Caballo2i",y);
+                    Thread.Sleep(1000);
                 }
             }
             private void boardImpress()

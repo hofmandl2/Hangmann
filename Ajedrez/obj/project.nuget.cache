@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FrqGYcR6pPPj5WlyTdQ7Q8I2jAaJhtMsZjb4KSlKGEO4+7Oz8KhdZR9j+0aNj2zpqG0OPvTkGODnCFiNXT3R8Q==",
+  "dgSpecHash": "Zx6Md8qMV5ElMpcl5IFA+wv37/nSARQ7nVmkH2FdBxSL9YK/s902WNmJc+yuLlrdYe3GS+s588AFGtLJd4OaDg==",
   "success": true,
-  "projectFilePath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/Ajedrez.csproj",
+  "projectFilePath": "E:\\C#\\Hangmann-Ejercicios\\Ajedrez\\Ajedrez.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
