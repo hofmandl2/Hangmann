@@ -16,24 +16,40 @@ namespace Ajedrez_main
         
        class Logic
        {
-        Piezas piezas = new Piezas();
+           Piezas piezas = new Piezas();
+           string vacio = " ♜ ";
+        
            
             string[,] tablero = new string[8, 8];
-            public Logic()
+            /*public void init()
             {
-                rellenoTableroFichas();                               
-            }
+                rellenoTableroFichasInit();//relleno inicial con las localizaciones originales                               
+            }*/
             public void start()
             {
-                
+                int x = 0;
+                int y = 0 ;
                 while(true)
                 {
+                        
+                        rellenoTableroFichasInit();//relleno que se actuliza con cada frame
                         boardImpress();
-                        Thread.Sleep(2000);
+
+                        Console.WriteLine($"i: {piezas.getCoordinat_piezas_blancas("Caballo1i")} j:{piezas.getCoordinat_piezas_blancas("Caballo1j")}");
+                    //piezas.setCoordinat_piezas_negras("Cababllo1i","Caballo1j",0,0); //i,j
+                        piezas.setCoordinatBlancasI("Caballo2i",7);
+                        
+                        Console.WriteLine("Type x: ");
+                        x = int.Parse(Console.WriteLine());
+                        piezas.setCoordinatBlancasJ("Caballo2j",x);
+                    Console.WriteLine($"i: {piezas.getCoordinat_piezas_blancas("Caballo1i")} j:{piezas.getCoordinat_piezas_blancas("Caballo1j")}");
+                    Thread.Sleep(2000);
                 }
             }
             private void boardImpress()
             {
+                    //int contadorx = 0;
+                    //int contadory = 0;
                     Console.Clear();
                     for (int i = 0; i < 8; i++)
                     {
@@ -41,81 +57,75 @@ namespace Ajedrez_main
                         {
                             if (i % 2 == 0 && j % 2 == 0|| i % 2 != 0 && j % 2 != 0)
                             {
-                                if(tablero[i,j] == "   ")
-                                {                           
-                                    Console.BackgroundColor = ConsoleColor.Blue;
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.Write(tablero[i,j]);
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.BackgroundColor = ConsoleColor.Black;
-                                }
-                                else if(piezas.soyBlanca(i,j) && !piezas.soyNegra(i,j))
+                                                           
+                                Console.BackgroundColor = ConsoleColor.Blue;
+                                if(tablero[i,j] == vacio)
                                 { 
-                                    Console.BackgroundColor = ConsoleColor.Blue;
+                                    Console.ForegroundColor = ConsoleColor.Blue;
+                                    Console.Write($"{tablero[i,j]}");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    
+                                }
+                                else if(piezas.soyBlanca(i,j))
+                                { 
+                                   //Console.BackgroundColor = ConsoleColor.Blue;
                                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                                     Console.Write(tablero[i,j]);
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.BackgroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                   // Console.BackgroundColor = ConsoleColor.Black;
                                 }
-                                else if(piezas.soyNegra(i,j) && !piezas.soyBlanca(i,j))
+                                else if(piezas.soyNegra(i,j))
                                 {                            
-                                    Console.BackgroundColor = ConsoleColor.Blue;
+                                    //Console.BackgroundColor = ConsoleColor.Blue;
                                     Console.ForegroundColor = ConsoleColor.Black;
                                     Console.Write(tablero[i,j]);
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.BackgroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    //Console.BackgroundColor = ConsoleColor.Black;
                                 }
-                                
-                                
-                                
+                                Console.BackgroundColor = ConsoleColor.Black;
                             }    
                             else
                             {
-                                    if(tablero[i,j] == "   ")
-                                    {
-                                        Console.BackgroundColor = ConsoleColor.Cyan;
-                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                        Console.Write(tablero[i,j]);
-                                        Console.ForegroundColor = ConsoleColor.Black;
-                                        Console.BackgroundColor = ConsoleColor.Black;
-                                    }
-                                    else if(piezas.soyNegra(i,j) && ! piezas.soyBlanca(i,j))
-                                    {
-                                        Console.BackgroundColor = ConsoleColor.Cyan;
-                                        Console.ForegroundColor = ConsoleColor.Black;
-                                        Console.Write(tablero[i,j]);
-                                        Console.ForegroundColor = ConsoleColor.Black;
-                                        Console.BackgroundColor = ConsoleColor.Black;
-                                
-                                    }
-                                    else if(piezas.soyBlanca(i,j) && !piezas.soyNegra(i,j))
-                                    {
-                                        Console.BackgroundColor = ConsoleColor.Cyan;
-                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                        Console.Write(tablero[i,j]);
-                                        Console.ForegroundColor = ConsoleColor.Black;
-                                        Console.BackgroundColor = ConsoleColor.Black;
-                                    }
                                     
+                                Console.BackgroundColor = ConsoleColor.Cyan;
+                                if(tablero[i,j] == vacio)
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Cyan;
+                                    Console.Write(tablero[i,j]);
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                }
+                                else if(piezas.soyNegra(i,j))
+                                {
+                                    //Console.BackgroundColor = ConsoleColor.Cyan;
+                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.Write(tablero[i,j]);
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    //Console.BackgroundColor = ConsoleColor.Black;
+                                
+                                 }
+                                 else if(piezas.soyBlanca(i,j))
+                                 {
+                                    //Console.BackgroundColor = ConsoleColor.Cyan;
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                    Console.Write(tablero[i,j]);
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    //Console.BackgroundColor = ConsoleColor.Black;
+                                  }
+
+                                
+                                Console.BackgroundColor = ConsoleColor.Black;
+                                                                        
                             }
                                 
                             
                         }
                         Console.WriteLine();
+                        //contadory++;
                     }
             }
-            void rellenoTableroFichas()
+            void rellenoTableroFichasInit()
             {
-                tablero[0,1] = " 0 ";
-                //relleno el tablero vacio
-                for(int i = 0; i<8; i++)
-                {
-                    for(int j = 0; j<8; j++)
-                    {   
-                        tablero[i,j] = "   ";
-                    }
-                }
-                //Fichas negras
+                                //Fichas negras
                 tablero[piezas.getCoordinat_piezas_negras("TorreIi"),piezas.getCoordinat_piezas_negras("TorreIj")] = piezas.getPiezas("Torre");
                 tablero[piezas.getCoordinat_piezas_negras("ArfilBi"),piezas.getCoordinat_piezas_negras("ArfilBj")] = piezas.getPiezas("Arfil");
                 tablero[piezas.getCoordinat_piezas_negras("Caballo1i"),piezas.getCoordinat_piezas_negras("Caballo1j")] = piezas.getPiezas("Caballo");
@@ -154,6 +164,35 @@ namespace Ajedrez_main
                 tablero[piezas.getCoordinat_piezas_blancas("Peon7i"),piezas.getCoordinat_piezas_blancas("Peon7j")] = piezas.getPiezas("Peon");
                 tablero[piezas.getCoordinat_piezas_blancas("Peon8i"),piezas.getCoordinat_piezas_blancas("Peon8j")] = piezas.getPiezas("Peon");
                 //Peon
+            
+
+                //relleno el tablero vacio
+                for(int i = 0; i<8; i++)
+                {
+                    for(int j = 0; j<8; j++)
+                    {   
+                        if(!piezas.soyBlanca(i,j) && !piezas.soyNegra(i,j)) 
+                        {
+                            tablero[i,j] = vacio;
+                        }
+                    }
+                }
+            }
+            void rellenoTableroFichas()
+            {
+
+                //relleno el tablero vacio
+                for(int i = 0; i<8; i++)
+                {
+                    for(int j = 0; j<8; j++)
+                    {   
+                        if(!piezas.soyNegra(i,j) || !piezas.soyBlanca(i,j))
+                        {
+                            tablero[i,j] = vacio;
+                        }
+
+                    }
+                }
             }
           
        }

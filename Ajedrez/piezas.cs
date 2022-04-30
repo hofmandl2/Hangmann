@@ -39,77 +39,83 @@ namespace clasePiezas
 				{"Peon8i",6},{"Peon8j",7}
         };
 
-		public void setCoordinat_piezas_blancas(string cordx,string cordy, int x,int y )
+		public void setCoordinatBlancasI(string cordI,int i)
 		{
-			coordinaten_blancas[cordx] = x;
-			coordinaten_blancas[cordy] = y;
+		    coordinaten_blancas[cordI] = i; //i
 		}
+  		public void setCoordinatBlancasJ(string cordJ,int j)
+		{
+		    coordinaten_blancas[cordJ] = j;
+        }
 		public int getCoordinat_piezas_blancas(string clave)
-        {
-           
+        {  
 			return coordinaten_blancas[clave];
         }
 		public bool soyBlanca(int i, int j)
 		{
 			
-			if(coordinaten_blancas["TorreIi"] == i && coordinaten_blancas["TorreIj"] == i)
+			if(coordinaten_blancas["TorreIi"] == i && coordinaten_blancas["TorreIj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_blancas["ArfilBi"] == i && coordinaten_blancas["ArfilBj"] == i)
+			if(coordinaten_blancas["ArfilBi"] == i && coordinaten_blancas["ArfilBj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_blancas["Caballo1i"] == i && coordinaten_blancas["Caballo1j"] == i)
+			if(coordinaten_blancas["Caballo1i"] == i && coordinaten_blancas["Caballo1j"] == j)
 			{
 				return true;
             }
-			if(coordinaten_blancas["ArfilNi"] == i && coordinaten_blancas["ArfilNj"] == i)
+			if(coordinaten_blancas["ArfilNi"] == i && coordinaten_blancas["ArfilNj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_blancas["TorreDi"] == i && coordinaten_blancas["TorreDj"] == i)
+			if(coordinaten_blancas["TorreDi"] == i && coordinaten_blancas["TorreDj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_blancas["Caballo2i"] == i && coordinaten_blancas["Caballo2j"] == i)
+			if(coordinaten_blancas["Caballo2i"] == i && coordinaten_blancas["Caballo2j"] == j)
 			{
 				return true;
             }
-			if(coordinaten_blancas["Reyi"] == i && coordinaten_blancas["Reyj"] == i)
+			if(coordinaten_blancas["Reyi"] == i && coordinaten_blancas["Reyj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_blancas["Reinai"] == i && coordinaten_blancas["Reinaj"] == i)
+			if(coordinaten_blancas["Reinai"] == i && coordinaten_blancas["Reinaj"] == j)
 			{
 				return true;
 			}
             //Peones
-			if(coordinaten_blancas["Peon1i"] == i && coordinaten_blancas["Peon1j"] == i)
+			if(coordinaten_blancas["Peon1i"] == i && coordinaten_blancas["Peon1j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_blancas["Peon2i"] == i && coordinaten_blancas["Peon2j"] == i)
+			if(coordinaten_blancas["Peon2i"] == i && coordinaten_blancas["Peon2j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_blancas["Peon3i"] == i && coordinaten_blancas["Peon3j"] == i)
+			if(coordinaten_blancas["Peon3i"] == i && coordinaten_blancas["Peon3j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_blancas["Peon4i"] == i && coordinaten_blancas["Peon4j"] == i)
+			if(coordinaten_blancas["Peon4i"] == i && coordinaten_blancas["Peon4j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_blancas["Peon5i"] == i && coordinaten_blancas["Peon5j"] == i)
+			if(coordinaten_blancas["Peon5i"] == i && coordinaten_blancas["Peon5j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_blancas["Peon6i"] == i && coordinaten_blancas["Peon6j"] == i)
+			if(coordinaten_blancas["Peon6i"] == i && coordinaten_blancas["Peon6j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_blancas["Peon7i"] == i && coordinaten_blancas["Peon7j"] == i)
+			if(coordinaten_blancas["Peon7i"] == i && coordinaten_blancas["Peon7j"] == j)
+			{
+				return true;
+			}
+			if(coordinaten_blancas["Peon8i"] == i && coordinaten_blancas["Peon8j"] == j)
 			{
 				return true;
 			}
@@ -148,64 +154,68 @@ namespace clasePiezas
 	
 		public bool soyNegra(int i, int j)
 		{
-			if(coordinaten_negras["TorreIi"] == i && coordinaten_negras["TorreIj"] == i)
+			if(coordinaten_negras["TorreIi"] == i && coordinaten_negras["TorreIj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_negras["ArfilBi"] == i && coordinaten_negras["ArfilBj"] == i)
+			if(coordinaten_negras["ArfilBi"] == i && coordinaten_negras["ArfilBj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_negras["Caballo1i"] == i && coordinaten_negras["Caballo1j"] == i)
+			if(coordinaten_negras["Caballo1i"] == i && coordinaten_negras["Caballo1j"] == j)
 			{
 				return true;
             }
-			if(coordinaten_negras["ArfilNi"] == i && coordinaten_negras["ArfilNj"] == i)
+			if(coordinaten_negras["ArfilNi"] == i && coordinaten_negras["ArfilNj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_negras["TorreDi"] == i && coordinaten_negras["TorreDj"] == i)
+			if(coordinaten_negras["TorreDi"] == i && coordinaten_negras["TorreDj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_negras["Caballo2i"] == i && coordinaten_negras["Caballo2j"] == i)
+			if(coordinaten_negras["Caballo2i"] == i && coordinaten_negras["Caballo2j"] == j)
 			{
 				return true;
             }
-			if(coordinaten_negras["Reyi"] == i && coordinaten_negras["Reyj"] == i)
+			if(coordinaten_negras["Reyi"] == i && coordinaten_negras["Reyj"] == j)
 			{
 				return true;
             }
-			if(coordinaten_negras["Reinai"] == i && coordinaten_negras["Reinaj"] == i)
+			if(coordinaten_negras["Reinai"] == i && coordinaten_negras["Reinaj"] == j)
 			{
 				return true;
 			}
             //Peones
-			if(coordinaten_negras["Peon1i"] == i && coordinaten_negras["Peon1j"] == i)
+			if(coordinaten_negras["Peon1i"] == i && coordinaten_negras["Peon1j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_negras["Peon2i"] == i && coordinaten_negras["Peon2j"] == i)
+			if(coordinaten_negras["Peon2i"] == i && coordinaten_negras["Peon2j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_negras["Peon3i"] == i && coordinaten_negras["Peon3j"] == i)
+			if(coordinaten_negras["Peon3i"] == i && coordinaten_negras["Peon3j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_negras["Peon4i"] == i && coordinaten_negras["Peon4j"] == i)
+			if(coordinaten_negras["Peon4i"] == i && coordinaten_negras["Peon4j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_negras["Peon5i"] == i && coordinaten_negras["Peon5j"] == i)
+			if(coordinaten_negras["Peon5i"] == i && coordinaten_negras["Peon5j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_negras["Peon6i"] == i && coordinaten_negras["Peon6j"] == i)
+			if(coordinaten_negras["Peon6i"] == i && coordinaten_negras["Peon6j"] == j)
 			{
 				return true;
 			}
-			if(coordinaten_negras["Peon1i"] == i && coordinaten_negras["Peon1j"] == i)
+			if(coordinaten_negras["Peon7i"] == i && coordinaten_negras["Peon7j"] == j)
+			{
+				return true;
+			}
+			if(coordinaten_negras["Peon8i"] == i && coordinaten_negras["Peon8j"] == j)
 			{
 				return true;
 			}
