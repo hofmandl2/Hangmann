@@ -7,7 +7,7 @@ class Ahorcado
   static void Main(string[] args)
   {
     //llamar a las otras clases
-    Console.Clear();
+   
     Logic logic = new Logic();
     logic.start();
     

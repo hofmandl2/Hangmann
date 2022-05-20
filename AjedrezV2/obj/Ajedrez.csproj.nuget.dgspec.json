@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/Ajedrez.csproj": {}
+    "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/AjedrezV2/Ajedrez.csproj": {}
   },
   "projects": {
-    "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/Ajedrez.csproj": {
+    "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/AjedrezV2/Ajedrez.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/Ajedrez.csproj",
+        "projectUniqueName": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/AjedrezV2/Ajedrez.csproj",
         "projectName": "Ajedrez",
-        "projectPath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/Ajedrez.csproj",
+        "projectPath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/AjedrezV2/Ajedrez.csproj",
         "packagesPath": "/home/gabrielrendon/.nuget/packages/",
-        "outputPath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/Ajedrez/obj/",
+        "outputPath": "/home/gabrielrendon/Documents/C#/Hangmann-Ejercicios/AjedrezV2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/gabrielrendon/.nuget/NuGet/NuGet.Config"
