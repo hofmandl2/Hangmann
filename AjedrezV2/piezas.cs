@@ -45,12 +45,26 @@ namespace clasePiezas
     }
     public class Caballo : Piezas
     {
-        Dictionary<int,int> move = new Dictionary<int,int>();
+        List<int> moves = new List<int>();
         
         public string icono = " ♘ ";
         public void move()
         {
-            move.Add(coordx-1,coordy-2)//primer move
+            coordx-= 1;
+            coordy-= 2;
+            moves.Add(coordx);//primer move
+            moves.Add(coordy);//
+        }
+        public void vaciadoDeLista()
+        {
+            moves.Clear();
+        }
+        public void moveImpres()
+        {
+            foreach(int i in moves)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
     

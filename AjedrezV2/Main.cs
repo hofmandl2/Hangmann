@@ -26,21 +26,18 @@ namespace Ajedrez_main
             string[,] tablero = new string[8, 8];
             public void start()
             {
-                int x = 0;
-                int y = 0;
+                caballoNegro.setCoordenada(2,1);
                 while(true)
                 {
                     rellenoTableroFichasInit();//relleno que se actuliza con cada frame
                     boardImpress();
                     
-                    caballoNegro.setCoordenada(2,1);
-                    caballoBlanco.setCoordenada(3,1);
+                    
+                    caballoNegro.move();
                     Console.WriteLine("{0}",caballoNegro.getCoordenadax());
-                    Console.WriteLine($"{caballoBlanco.getCoordenaday()}");
-                    caballoNegro.setCoordenada(1,1);
-                    caballoBlanco.setCoordenada(1,1);
-                    Console.WriteLine($"{caballoNegro.coordx} : {caballoNegro.coordy}");
-                    Console.WriteLine($"{caballoBlanco.coordx} : {caballoBlanco.coordy}");
+                    
+                    caballoNegro.moveImpres();
+                    caballoNegro.vacioDeLista();
                     Thread.Sleep(1000);
                 }
             }
@@ -145,7 +142,7 @@ namespace Ajedrez_main
                             tablero[i,j] = vacio;
                             
                         }*/
-                        if(j != caballoNegro.getCoordenadax() && i !=caballoNegro.getCoordenaday())
+                        if(i != caballoNegro.getCoordenaday() && j !=caballoNegro.getCoordenadax())
                         {
                             tablero[i,j] = vacio;
 
