@@ -22,8 +22,8 @@ namespace clasePiezas
     }
     public class Piezas
     {
-        public int coordx;
-        public int coordy;
+        public int coordx = 0;
+        public int coordy = 0;
         string icono;
         public void setCoordenada(int x, int y)
         {
@@ -45,26 +45,38 @@ namespace clasePiezas
     }
     public class Caballo : Piezas
     {
-        List<int> moves = new List<int>();
+        public List<int> moves = new List<int>();
         
         public string icono = " ♘ ";
+        
         public void move()
         {
-            coordx-= 1;
-            coordy-= 2;
-            moves.Add(coordx);//primer move
-            moves.Add(coordy);//
+            //int x;
+            //int y;
+            for(int i = 0; i <1; i++)
+            {
+                int x = coordx - 1;
+                int y = coordy + 2;
+                moves.Add(y);
+                moves.Add(x);//primer move
+                x = coordx - 2;
+                y = coordy + 1;
+                moves.Add(y);
+                moves.Add(x);//segundo  move
+            }
         }
         public void vaciadoDeLista()
         {
             moves.Clear();
         }
-        public void moveImpres()
-        {
-            foreach(int i in moves)
+        public int moveImpres()
+        { 
+            for(int i = 0; i<moves.Count(); i++)
             {
-                Console.WriteLine(i);
+                //Console.Write(i+":");
+                return moves[i];
             }
+            return moves[moves.Last()];
         }
     }
     
