@@ -1,0 +1,5 @@
+/home/gabrielrendon/Documents/C#/array/obj/Debug/net6.0/array.csproj.AssemblyReference.cache
+/home/gabrielrendon/Documents/C#/array/obj/Debug/net6.0/array.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabrielrendon/Documents/C#/array/obj/Debug/net6.0/array.AssemblyInfoInputs.cache
+/home/gabrielrendon/Documents/C#/array/obj/Debug/net6.0/array.AssemblyInfo.cs
+/home/gabrielrendon/Documents/C#/array/obj/Debug/net6.0/array.csproj.CoreCompileInputs.cache

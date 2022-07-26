@@ -26,8 +26,8 @@ namespace Ajedrez_main
             string[,] tablero = new string[8, 8];
             public void start()
             {
-                caballoNegro.setCoordenada(2,1);
-                
+                caballoNegro.setCoordenada(3,5);
+                string pos;
                 while(true)
                 {
                     caballoNegro.move();
@@ -36,9 +36,14 @@ namespace Ajedrez_main
                     
                     
                     
-                    //Console.WriteLine("{0}",caballoNegro.getCoordenadax());
-                    
-                    Console.Write(caballoNegro.moveImpres()+" : ");
+                    Console.WriteLine($"{caballoNegro.moves[0]} : {caballoNegro.moves[1]} ");
+                    Console.WriteLine($"{caballoNegro.moves[2]} : {caballoNegro.moves[3]} ");
+                    pos = Console.ReadLine();
+                    if(pos == "1")
+                    {
+                        caballoNegro.setCoordenada(caballoNegro.moves[2],caballoNegro.moves[3]);
+                    }
+                    //Console.Write(caballoNegro.moveImpres()+" : ");
                     caballoNegro.vaciadoDeLista();
                     Thread.Sleep(1000);
                 }
@@ -70,16 +75,8 @@ namespace Ajedrez_main
                                     Console.Write(tablero[i,j]);
                                     Console.ForegroundColor = ConsoleColor.White;
                                    // Console.BackgroundColor = ConsoleColor.Black;
-                                }
-                                else if(piezas.soyNegra(i,j))
-                                {                            
-                                    //Console.BackgroundColor = ConsoleColor.Blue;
-                                    Console.ForegroundColor = ConsoleColor.Black;
-                                    Console.Write(tablero[i,j]);
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                    //Console.BackgroundColor = ConsoleColor.Black;
                                 }*/
-                                else if(tablero[i,j] != caballoNegro.getIcono())
+                                else if(soyNegra(i,j))
                                 {
                                     Console.ForegroundColor = ConsoleColor.Black;
                                     Console.Write(tablero[i,j]);
@@ -97,15 +94,12 @@ namespace Ajedrez_main
                                     Console.Write(tablero[i,j]);
                                     Console.ForegroundColor = ConsoleColor.White;
                                 }
-                                /*else if(piezas.soyNegra(i,j))
+                                else if(soyNegra(i,j))
                                 {
-                                    //Console.BackgroundColor = ConsoleColor.Cyan;
-                                    Console.ForegroundColor = ConsoleColor.Black;
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                                     Console.Write(tablero[i,j]);
                                     Console.ForegroundColor = ConsoleColor.White;
-                                    //Console.BackgroundColor = ConsoleColor.Black;
-                                
-                                 }
+                                }/*
                                  else if(piezas.soyBlanca(i,j))
                                  {
                                     //Console.BackgroundColor = ConsoleColor.Cyan;
@@ -114,12 +108,7 @@ namespace Ajedrez_main
                                     Console.ForegroundColor = ConsoleColor.White;
                                     //Console.BackgroundColor = ConsoleColor.Black;
                                   }*/
-                                else if(tablero[i,j] != caballoNegro.getIcono())
-                                {
-                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                    Console.Write(tablero[i,j]);
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                }
+                                
                                 
                                 Console.BackgroundColor = ConsoleColor.Black;
                                                                         
@@ -135,7 +124,7 @@ namespace Ajedrez_main
             {   
                 if(caballoNegro.getCoordenadax() <=7 && caballoNegro.getCoordenadax() >=0 && caballoNegro.getCoordenaday() >=0 && caballoNegro.getCoordenaday() <=7 )
                 {
-                    tablero[caballoNegro.getCoordenadax(),caballoNegro.getCoordenaday()] = caballoNegro.icono;
+                    tablero[caballoNegro.moves[0],caballoNegro.moves[1]] = caballoNegro.icono;
                 }
                 /*if(caballoNegro.move %2 == 0)
                 {
@@ -161,6 +150,14 @@ namespace Ajedrez_main
                         }
                     }
                 }
+            }
+            bool soyNegra(int i, int j)
+            {
+                if(j == caballoNegro.getCoordenadax() && i == caballoNegro.getCoordenaday())
+                {
+                    return true;
+                }
+                return false;
             }
        }
     }

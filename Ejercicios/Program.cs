@@ -278,11 +278,18 @@ namespace Ejercicios
                2) dibujar cada pieza y sus posibilidades
                3) coliciones
                4) ganadores*/
-
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.WriteLine("Background color changed = "+Console.BackgroundColor);
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("hola");
+            int a = 1;
+            List<int> prueba = new List<int>();
+            for(int i = 0; i<10; i++)
+            {
+                a -=8;
+                prueba.Add(a);
+            }
+            foreach(var i in prueba)
+            {
+                Console.WriteLine(i);
+            }
+            prueba.Clear();
         }
     }
 }
