@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using clasePiezas;
 using System.Threading.Tasks;
@@ -17,7 +17,6 @@ namespace Ajedrez_main
     {
         //Constructores
         clasePiezas.Icon_Piezas icon = new clasePiezas.Icon_Piezas();
-        clasePiezas.Torre torre = new Torre();
         clasePiezas.Piezas piezas = new clasePiezas.Piezas();
 
         string vacio = " ♜ ";
@@ -29,7 +28,7 @@ namespace Ajedrez_main
         {
             rellenodecordenadasNegras();
             rellenodecordenadasBlancas();
-            torre.move(cordenadasBlancas[0,0],cordenadasBlancas[0,1]);
+            piezas.torreMove(cordenadasBlancas[0,0],cordenadasBlancas[0,1]);
             boardrelleno();
             boarImpress();
         }

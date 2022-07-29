@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Ajedrez_main;
 
@@ -23,30 +23,25 @@ namespace clasePiezas
 	}
 	public class Piezas
 	{
+    	Logic tablero = new Logic();
 		string casillasParaMover = " ♟ ";
-		public string getCasillaIcon()
+
+        public string getCasillaIcon()
 		{
 			return casillasParaMover;
 		}
 
+        public void torreMove(int y, int x)
+    	{
+    	    //Movimientos en el eje y hacia arriba
+    	   	for(int i = 0; i < y; i++)
+    		{
+    	   		if (tablero.cordenadasBlancas[0, 1] - 1 > 0)
+    	   		{
+    				tablero.tablero[y,tablero.cordenadasBlancas[0, 1] - 1] = casillasParaMover;
+    	   		}
+    	   	}
+    	}
 
 	}
-	public class Torre : Piezas
-	{
-		Piezas p = new Piezas();
-		Logic tablero = new Logic();
-		public void move (int y, int x)
-		{
-			//Movimientos en el eje y hacia arriba
-			for(int i = 0; i < y; i++)
-			{
-				if (tablero.cordenadasBlancas[0, 1] - 1 > 0)
-				{
-					tablero.tablero[y,tablero.cordenadasBlancas[0, 1] - 1] = p.getCasillaIcon();
-				}
-			}
-		}
-
-	}
-
 }
